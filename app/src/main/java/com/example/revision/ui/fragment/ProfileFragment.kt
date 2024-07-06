@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.revision.R
 import com.example.revision.databinding.FragmentProfileBinding
-import com.example.revision.repository.AuthRepoImpl
+import com.example.revision.repository.auth.AuthRepoImpl
 import com.example.revision.ui.activity.EditProfileActivity
 import com.example.revision.ui.activity.LoginActivity
 import com.example.revision.viewmodel.AuthViewModel

@@ -126,7 +126,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/editTerms"
+            android:id="@+id/editCategoryAdmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
@@ -143,7 +143,7 @@
                 <TextView
                     android:paddingLeft="10dp"
                     android:layout_width="wrap_content"
-                    android:text="Terms and conditions"
+                    android:text="Category Admin"
                     android:layout_marginTop="6dp"
                     android:textStyle="bold"
                     android:textSize="20sp"
@@ -153,6 +153,32 @@
         </androidx.cardview.widget.CardView>
 
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editProductAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:src="@drawable/baseline_category_24"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:text="Product Admin"
+                    android:layout_marginTop="6dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/editLogout"
             android:layout_width="match_parent"

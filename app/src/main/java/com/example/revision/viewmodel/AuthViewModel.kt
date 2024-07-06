@@ -4,7 +4,7 @@ import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.revision.model.UserModel
-import com.example.revision.repository.AuthRepo
+import com.example.revision.repository.auth.AuthRepo
 import com.google.firebase.auth.FirebaseUser
 
 class AuthViewModel(var repo: AuthRepo) : ViewModel(){

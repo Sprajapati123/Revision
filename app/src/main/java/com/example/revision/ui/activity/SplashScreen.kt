@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.revision.R
 import com.example.revision.databinding.ActivitySplashScreenBinding
-import com.example.revision.repository.AuthRepoImpl
+import com.example.revision.repository.auth.AuthRepoImpl
 import com.example.revision.viewmodel.AuthViewModel
 
 class SplashScreen : AppCompatActivity() {
