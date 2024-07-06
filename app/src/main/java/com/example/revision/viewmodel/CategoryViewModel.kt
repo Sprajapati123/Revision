@@ -45,4 +45,9 @@ class CategoryViewModel(val repo : CategoryRepo) : ViewModel() {
         }
     }
 
+
+    fun deleteImage(imageName:String,callback: (Boolean, String?) -> Unit){
+        repo.deleteImage(imageName,callback)
+    }
+
 }

@@ -86,6 +86,17 @@ class CategoryRepoImpl : CategoryRepo{
 
     }
 
+    override fun deleteImage(imageName: String, callback: (Boolean, String?) -> Unit) {
+        storageRef.child(imageName).delete().addOnCompleteListener {
+            if(it.isSuccessful){
+                callback(true,"Successfully deleted")
+            }else{
+                callback(false,"Unable to delete image")
+
+            }
+        }
+    }
+
     override fun getAllCategory(callback: (List<CategoryModel>?, Boolean, String?) -> Unit) {
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

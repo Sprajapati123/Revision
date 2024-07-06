@@ -14,6 +14,8 @@ interface CategoryRepo {
 
     fun deleteCategory(categoryId:String,callback: (Boolean, String?) -> Unit)
 
+    fun deleteImage(imageName:String,callback: (Boolean, String?) -> Unit)
+
     fun getAllCategory(callback: (List<CategoryModel>?,Boolean, String?) -> Unit)
 
 }

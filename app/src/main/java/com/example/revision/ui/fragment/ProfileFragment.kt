@@ -12,6 +12,7 @@ import com.example.revision.databinding.FragmentProfileBinding
 import com.example.revision.repository.auth.AuthRepoImpl
 import com.example.revision.ui.activity.EditProfileActivity
 import com.example.revision.ui.activity.LoginActivity
+import com.example.revision.ui.activity.admin.CategoryDashBoardActivity
 import com.example.revision.viewmodel.AuthViewModel
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
@@ -46,6 +47,12 @@ class ProfileFragment : Fragment() {
             intent.putExtra("userData",authViewModel.userData.value)
             startActivity(intent)
         }
+
+        profileBinding.editCategoryAdmin.setOnClickListener {
+            var intent = Intent(requireContext(),CategoryDashBoardActivity::class.java)
+            startActivity(intent)
+        }
+
 
         authViewModel.userData.observe(requireActivity()){users->
             users.let {
