@@ -2,6 +2,7 @@ package com.example.revision.ui.activity.admin
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,9 +26,11 @@ class UpdateProductActivity : AppCompatActivity() {
     var imageUri: Uri? = null
     lateinit var loadingUtils: LoadingUtils
     lateinit var productViewModel: ProductViewModel
+    lateinit var categoryViewModel: CategoryViewModel
 
     var productId = ""
     var imageName = ""
+    var category = ""
 
     lateinit var updateProductBinding: ActivityUpdateProductBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +43,10 @@ class UpdateProductActivity : AppCompatActivity() {
         var repo = ProductRepoImpl()
         productViewModel = ProductViewModel(repo)
 
+        var categoryRepo = CategoryRepoImpl()
+        categoryViewModel = CategoryViewModel(categoryRepo)
+        categoryViewModel.getAllCategory()
+
         imageUtils.registerActivity { url ->
             url.let { it ->
                 imageUri = it
@@ -49,6 +56,7 @@ class UpdateProductActivity : AppCompatActivity() {
         var product : ProductModel? = intent.getParcelableExtra("products")
         productId = product?.id.toString()
         imageName = product?.imageName.toString()
+        category = product?.categoryName.toString()
 
         updateProductBinding.editTextProductNameUpdate.setText(product?.productName)
         updateProductBinding.editTextProductPriceUpdate.setText(product?.price.toString())
@@ -56,6 +64,23 @@ class UpdateProductActivity : AppCompatActivity() {
 
         Picasso.get().load(product?.imageUrl).into(updateProductBinding.imageViewProductAddUpdate)
 
+        categoryViewModel.categoryData.observe(this){data->
+            var categoryName = data?.map { category->
+                category.categoryName
+            } ?: emptyList()
+
+            var arrayAdapter = ArrayAdapter(
+                this@UpdateProductActivity,android.R.layout.simple_spinner_item,categoryName
+            )
+
+            arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+            updateProductBinding.spinnerCategoryUpdate.adapter = arrayAdapter
+
+            val defaultPosition = categoryName.indexOf(category)
+            if(defaultPosition >=0){
+                updateProductBinding.spinnerCategoryUpdate.setSelection(defaultPosition)
+            }
+        }
 
 
         updateProductBinding.imageViewProductBrowseUpdate.setOnClickListener {
