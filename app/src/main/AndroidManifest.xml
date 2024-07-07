@@ -18,6 +18,21 @@
         android:theme="@style/Theme.Revision"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.admin.UpdateProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.admin.AddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.admin.ProductDashboardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.activity.admin.UpdateCategoryActivity"
             android:exported="false" />
         <activity

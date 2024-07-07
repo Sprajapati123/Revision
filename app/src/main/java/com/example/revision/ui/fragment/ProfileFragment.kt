@@ -13,6 +13,7 @@ import com.example.revision.repository.auth.AuthRepoImpl
 import com.example.revision.ui.activity.EditProfileActivity
 import com.example.revision.ui.activity.LoginActivity
 import com.example.revision.ui.activity.admin.CategoryDashBoardActivity
+import com.example.revision.ui.activity.admin.ProductDashboardActivity
 import com.example.revision.viewmodel.AuthViewModel
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
@@ -50,6 +51,11 @@ class ProfileFragment : Fragment() {
 
         profileBinding.editCategoryAdmin.setOnClickListener {
             var intent = Intent(requireContext(),CategoryDashBoardActivity::class.java)
+            startActivity(intent)
+        }
+
+        profileBinding.editProductAdmin.setOnClickListener {
+            var intent = Intent(requireContext(),ProductDashboardActivity::class.java)
             startActivity(intent)
         }
 
