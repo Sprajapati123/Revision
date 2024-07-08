@@ -36,7 +36,6 @@ class NavigationActivity : AppCompatActivity() {
         navigationBinding.buttomNavigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.menuHome -> replaceFragment(HomeFragment())
-                R.id.menuCategory -> replaceFragment(CategoryFragment())
                 R.id.menuCart -> replaceFragment(CartFragment())
                 R.id.menuProfile -> replaceFragment(ProfileFragment())
                 else -> {}
