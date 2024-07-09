@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Revision"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.admin.UpdateProductActivity"
             android:exported="false" />
         <activity
