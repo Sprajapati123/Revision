@@ -8,4 +8,8 @@ interface CartRepo {
 
     fun deleteCart(cartID:String,callback: (Boolean, String?) -> Unit)
 
+    fun getCart(callback: (List<CartModel>?,Boolean, String?) -> Unit)
+
+
+
 }

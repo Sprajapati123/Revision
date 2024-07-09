@@ -97,33 +97,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/editMyCart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:padding="20dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:src="@drawable/baseline_shopping_cart_24"
-                    android:layout_height="40dp"/>
-
-                <TextView
-                    android:paddingLeft="10dp"
-                    android:layout_width="wrap_content"
-                    android:text="My Cart"
-                    android:layout_marginTop="6dp"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/editCategoryAdmin"
