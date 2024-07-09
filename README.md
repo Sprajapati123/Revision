@@ -47,3 +47,7 @@ https://youtu.be/t4XIAUUwKac
 Fetching data in Cart Fragment
 
 https://youtu.be/neO5-UNEaSE
+
+Fetching Product By Category
+
+https://youtu.be/ElFIaf17LfY
